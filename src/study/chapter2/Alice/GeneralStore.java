@@ -1,17 +1,11 @@
 package src.study.chapter2.Alice;
 
-public abstract class GeneralStore{
-
-    abstract void reduceWeight(int weight);
-    abstract boolean checkEnoughFood(int quantity);
-    abstract String getFood();
-
-    abstract boolean checkFoodInStockOrNot();
+public abstract class GeneralStore implements Store{
 
     static GeneralStore selectStore(String food) {
         if (food.equals("meat")) {
-            return MeatGeneralStore.getInstance();
+            return MeatStore.getInstance();
         }
-        return VegetableGeneralStore.getInstance();
+        return VegetableStore.getInstance();
     }
 }

@@ -1,6 +1,6 @@
 package src.study.chapter2.Alice;
 
-public class MeatGeneralStore extends GeneralStore{
+public class MeatStore extends GeneralStore implements Store{
 
     static GeneralStore instance;
     @Override
@@ -8,12 +8,12 @@ public class MeatGeneralStore extends GeneralStore{
         return "meat";
     }
 
-    private MeatGeneralStore() {
+    private MeatStore() {
     }
 
     public static GeneralStore getInstance() {
         if (instance == null) {
-            instance = new MeatGeneralStore();
+            instance = new MeatStore();
         }
         return instance;
     }

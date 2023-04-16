@@ -1,6 +1,6 @@
 package src.study.chapter2.Alice;
 
-public class VegetableGeneralStore extends GeneralStore {
+public class VegetableStore extends GeneralStore implements Store {
     static GeneralStore instance;
     private int quantity = 1000;
 
@@ -9,12 +9,12 @@ public class VegetableGeneralStore extends GeneralStore {
         return "vegetable";
     }
 
-    private VegetableGeneralStore() {
+    private VegetableStore() {
     }
 
     public static GeneralStore getInstance() {
         if (instance == null) {
-            instance = new VegetableGeneralStore();
+            instance = new VegetableStore();
         }
         return instance;
     }
