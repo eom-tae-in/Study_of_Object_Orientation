@@ -31,6 +31,7 @@ public enum MenuBoard {
         try {
             for (MenuBoard n : values()) {
                 if (n.menu.equals(menu)) {
+                    System.out.println("손님 " + n.price + "원입니다.");
                     return n;
                 }
             }
