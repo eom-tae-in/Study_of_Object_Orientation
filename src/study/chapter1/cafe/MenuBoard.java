@@ -2,7 +2,7 @@ package src.study.chapter1.cafe;
 
 import src.study.chapter1.cafe.exception.MenuNotFoundException;
 
-public enum Menu {
+public enum MenuBoard {
 
     AMERICANO(3000, "americano"),
     LATTE  (4500, "latte"),
@@ -14,7 +14,7 @@ public enum Menu {
     private int price;
     private String menu;
 
-    private Menu(int price, String menu) {
+    private MenuBoard(int price, String menu) {
         this.price = price;
         this.menu = menu;
     }
@@ -27,9 +27,9 @@ public enum Menu {
         return menu;
     }
 
-    public static Menu isCafeMenu(String menu) {
+    public static MenuBoard isCafeMenu(String menu) {
         try {
-            for (Menu n : values()) {
+            for (MenuBoard n : values()) {
                 if (n.menu.equals(menu)) {
                     return n;
                 }
