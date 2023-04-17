@@ -4,11 +4,11 @@ public class Cafe {
 
     public static void main(String[] args) {
         Customer customer = new Customer();
-        MenuBoard menuBoard = customer.getMyMenu();
+        MenuBoard menu = customer.getMyMenu();
         Cashier cashier = new Cashier();
         Barista barista = new Barista();
-        customer.order(cashier, menuBoard);
-        MenuBoard madeMenuBoard = cashier.requestMenu(barista, menuBoard);
-        cashier.isCustomerMenu(madeMenuBoard);
+        customer.order(cashier, menu);
+        MenuBoard madeMenu = cashier.requestMenu(barista, menu);
+        cashier.isCustomerMenu(madeMenu);
     }
 }
