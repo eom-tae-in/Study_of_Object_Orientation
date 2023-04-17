@@ -1,1 +1,1 @@
-# -Study-of-Object-Orientation
+# Study-of-Object-Orientation
