@@ -19,10 +19,6 @@ public enum MenuBoard {
         this.menu = menu;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
     public String getMenu() {
         return menu;
     }
