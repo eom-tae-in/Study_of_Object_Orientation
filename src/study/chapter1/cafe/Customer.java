@@ -4,19 +4,19 @@ import java.util.Scanner;
 
 public class Customer {
 
-    private final MenuBoard myMenuBoard;
+    private final Menu myMenu;
 
     public Customer() {
         Scanner sc = new Scanner(System.in);
         String menu = sc.next();
-        this.myMenuBoard = MenuBoard.isCafeMenu(menu);
+        this.myMenu = Menu.isCafeMenu(menu);
     }
 
-    public MenuBoard getMyMenu() {
-        return myMenuBoard;
+    public Menu getMyMenu() {
+        return myMenu;
     }
 
-    void order(Cashier cashier, MenuBoard menuBoard) {
-        cashier.ordered(menuBoard);
+    void order(Cashier cashier, Menu menu) {
+        cashier.ordered(menu);
     }
 }

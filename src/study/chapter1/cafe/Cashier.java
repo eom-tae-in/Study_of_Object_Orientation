@@ -6,24 +6,24 @@ import java.util.Queue;
 
 public class Cashier {
 
-    Queue<MenuBoard> orderedList = new LinkedList<>();
+    Queue<Menu> orderedList = new LinkedList<>();
 
-    void ordered(MenuBoard menuBoard) {
-        orderedList.add(menuBoard);
+    void ordered(Menu menu) {
+        orderedList.add(menu);
     }
 
-    MenuBoard requestMenu(Barista barista, MenuBoard menuBoard) {
-        return barista.makeMenu(menuBoard);
+    Menu requestMenu(Barista barista, Menu menu) {
+        return barista.makeMenu(menu);
     }
 
-    void isCustomerMenu(MenuBoard madeMenuBoard) {
+    void isCustomerMenu(Menu madeMenu) {
         try {
-            if (!orderedList.peek().equals(madeMenuBoard)) {
+            if (!orderedList.peek().equals(madeMenu)) {
                 throw new MenuNotEqualsException();
             }
-            MenuBoard menuBoard = orderedList.poll();
+            Menu menu = orderedList.poll();
             System.out.println("정상적으로 처리되었습니다.");
-            System.out.println("주문하신 " + menuBoard.getMenu() + " 나왔습니다~~");
+            System.out.println("주문하신 " + menu.getMenu() + " 나왔습니다~~");
         } catch (IllegalArgumentException e) {
             System.out.println("손님이 주문한 메뉴와 바리스타가 만든 메뉴가 다릅니다.");
         }
