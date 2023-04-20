@@ -25,8 +25,8 @@ public class VegetableStore implements Store {
     }
 
     @Override
-    public void soldFood(int weight) {
-        this.quantity -= weight;
+    public void soldFood(int quantity) {
+        this.quantity -= quantity;
     }
 
     @Override
