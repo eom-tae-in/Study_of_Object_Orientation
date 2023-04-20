@@ -5,6 +5,7 @@ import static src.study.chapter2.Alice.Output.*;
 public class Story {
 
     public static void main(String[] args) {
+
         Input input = new Input();
         Door door = new Door();
         printAskHeight();

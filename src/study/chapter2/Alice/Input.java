@@ -2,7 +2,6 @@ package src.study.chapter2.Alice;
 
 import src.study.chapter2.Alice.exception.NotEnoughFoodException;
 import src.study.chapter2.Alice.exception.NotFoundFoodException;
-
 import java.util.Scanner;
 
 public class Input {

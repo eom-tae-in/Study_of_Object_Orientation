@@ -4,6 +4,7 @@ import src.study.chapter2.Alice.exception.NotEnoughFoodException;
 import java.util.Random;
 
 public class VegetableStore implements Store {
+
     private static final Store vegetableStore = new VegetableStore();
     private int quantity;
     private final String food;
