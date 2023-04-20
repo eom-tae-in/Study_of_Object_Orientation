@@ -11,11 +11,6 @@ public class Output {
         System.out.println("고기를 먹일거면 meat, 채소를 먹일거면 vegetable을 입력해주세요");
     }
 
-    public static void printNotEnoughFood() {
-        System.out.println("재고가 부족합니다.");
-        System.out.println("다시 입력해주세요.");
-    }
-
     public static void printQuantityQuestion() {
         System.out.println("얼마나 먹일건가요?");
     }
