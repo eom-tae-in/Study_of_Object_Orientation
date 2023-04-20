@@ -18,7 +18,6 @@ public class Input {
             String food = sc.next();
             return FoodInfo.checkFoodExist(food);
         } catch (NotFoundFoodException e) {
-            System.out.println(e.getMessage());
             return food();
         }
     }
@@ -29,7 +28,6 @@ public class Input {
             store.checkEnoughFood(quantity);
             return quantity;
         } catch (NotEnoughFoodException e) {
-            System.out.println(e.getMessage());
             return quantity(store);
         }
     }
