@@ -1,5 +1,9 @@
 package src.study.chapter2.Alice;
 
+import src.study.chapter2.Alice.exception.NotFoundFoodException;
+
+import java.util.Arrays;
+
 public enum FoodInfo {
 
     VEGETABLE("vegetable","plus"),
@@ -19,5 +23,11 @@ public enum FoodInfo {
 
     public String getFood() {
         return food;
+    }
+
+    static void checkFoodExist(String food) {
+        if (Arrays.stream(values()).noneMatch(foodInfo -> foodInfo.food.equals(food))) {
+            throw new NotFoundFoodException();
+        }
     }
 }
