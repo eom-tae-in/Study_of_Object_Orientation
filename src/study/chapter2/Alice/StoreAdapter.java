@@ -23,7 +23,9 @@ public enum StoreAdapter {
         return any.get().store;
     }
 
-    static boolean checkStoreExist(String food) {
-        return Arrays.stream(values()).anyMatch(e -> e.food.equals(food));
+    static void checkStoreExist(String food) {
+        if (Arrays.stream(values()).noneMatch(e -> e.food.equals(food))) {
+            throw new NotFoundFoodException();
+        }
     }
 }
