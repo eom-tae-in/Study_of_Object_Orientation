@@ -2,6 +2,9 @@ package src.study.chapter1.cafe;
 
 import src.study.chapter1.cafe.exception.MenuNotFoundException;
 
+import java.util.Arrays;
+import java.util.Optional;
+
 public enum Menu {
 
     AMERICANO(3000, "americano"),
@@ -24,17 +27,14 @@ public enum Menu {
     }
 
     public static Menu isCafeMenu(String menu) {
-        try {
-            for (Menu n : values()) {
-                if (n.menuName.equals(menu)) {
-                    System.out.println("손님 " + n.price + "원입니다.");
-                    return n;
-                }
-            }
+        return checkMenu(menu);
+    }
+
+    private static Menu checkMenu(String checkingMenu) {
+        Optional<Menu> checkedMenu = Arrays.stream(values()).filter(menu -> menu.menuName.equals(checkingMenu)).findAny();
+        if (checkedMenu.isEmpty()) {
             throw new MenuNotFoundException();
-        } catch (IllegalArgumentException e) {
-            System.out.println("손님께서 주문하시려는 메뉴가 저희 카페에 없습니다.");
         }
-        return null;
+        return checkedMenu.get();
     }
 }
