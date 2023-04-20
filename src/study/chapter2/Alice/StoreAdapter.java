@@ -1,9 +1,9 @@
 package src.study.chapter2.Alice;
 
-import src.study.chapter2.Alice.exception.NotFoundFoodException;
 import src.study.chapter2.Alice.exception.NotFoundFoodStoreException;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 public enum StoreAdapter {
@@ -24,11 +24,32 @@ public enum StoreAdapter {
     }
 
     static Store checkStoreExist(FoodInfo checkingFoodInfo) {
-        Optional<StoreAdapter> checkedFoodInfo =
-                Arrays.stream(values()).filter(storeAdapter -> storeAdapter.foodInfo.equals(checkingFoodInfo)).findAny();
+        Optional<StoreAdapter> checkedFoodInfo = getFoodStore(checkingFoodInfo);
         if (checkedFoodInfo.isPresent()) {
             return checkedFoodInfo.get().store;
         }
         throw new NotFoundFoodStoreException();
     }
+
+    private static Optional<StoreAdapter> getFoodStore(FoodInfo checkingFoodInfo) {
+        return Arrays.stream(values()).filter(storeAdapter -> storeAdapter.foodInfo.equals(checkingFoodInfo)).findAny();
+    }
+
+    static boolean canNotPassDoor() {
+        List<FoodInfo> growingFood = Arrays.stream(FoodInfo.values()).filter(FoodInfo::isGrowingFood).toList();
+        List<StoreAdapter> growingFoodStores = 
+                growingFood.stream().map(foodInfo -> getFoodStore(foodInfo).orElse(null)).toList();
+        List<FoodInfo> shorteningFood =
+                Arrays.stream(FoodInfo.values()).filter(foodInfo -> !(foodInfo.isGrowingFood())).toList();
+        List<StoreAdapter> shorteningFoodStores =
+                shorteningFood.stream().map(foodInfo -> getFoodStore(foodInfo).orElse(null)).toList();
+        return (isEmptyInFoodStores(growingFoodStores) || isEmptyInFoodStores(shorteningFoodStores));
+    }
+
+    private static boolean isEmptyInFoodStores(List<StoreAdapter> growingFoodStores) {
+        return growingFoodStores.stream().noneMatch(storeAdapter -> (storeAdapter.store.checkFoodInStockOrNot()));
+    }
+
+
 }
+
