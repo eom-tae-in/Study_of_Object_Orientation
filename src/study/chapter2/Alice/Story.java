@@ -9,7 +9,7 @@ public class Story {
         printAskHeight();
         Alice alice = new Alice(height());
         printSelectFoodQuestion();
-        store = GeneralStore.selectStore(food());
+        store = Store.selectStore(food());
         return store.checkFoodInStockOrNot();
         story = new Story();
         story.setUpStory();

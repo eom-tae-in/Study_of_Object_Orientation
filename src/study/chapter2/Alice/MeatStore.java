@@ -2,9 +2,9 @@ package src.study.chapter2.Alice;
 
 import java.util.Scanner;
 
-public class MeatStore extends GeneralStore implements Store{
+public class MeatStore implements Store{
 
-    private static final GeneralStore meatStore = new MeatStore();
+    private static final Store meatStore = new MeatStore();
     private int quantity;
     private final String food;
 
@@ -14,7 +14,7 @@ public class MeatStore extends GeneralStore implements Store{
         this.food = "meat";
     }
 
-    public static GeneralStore getInstance() {
+    public static Store getInstance() {
         return meatStore;
     }
 

@@ -2,8 +2,8 @@ package src.study.chapter2.Alice;
 
 import java.util.Scanner;
 
-public class VegetableStore extends GeneralStore implements Store {
-    private static final GeneralStore vegetableStore = new VegetableStore();
+public class VegetableStore implements Store {
+    private static final Store vegetableStore = new VegetableStore();
     private int quantity;
     private final String food;
 
@@ -13,7 +13,7 @@ public class VegetableStore extends GeneralStore implements Store {
         this.food = "vegetable";
     }
 
-    public static GeneralStore getInstance() {
+    public static Store getInstance() {
         return vegetableStore;
     }
 
