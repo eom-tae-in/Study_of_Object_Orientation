@@ -7,12 +7,10 @@ public class VegetableStore implements Store {
 
     private static final Store vegetableStore = new VegetableStore();
     private int quantity;
-    private final String food;
 
     private VegetableStore() {
         Random random = new Random();
         this.quantity = random.nextInt(100, 1000);
-        this.food = "vegetable";
     }
 
     public static Store getInstance() {

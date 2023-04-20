@@ -7,12 +7,10 @@ public class MeatStore implements Store{
 
     private static final Store meatStore = new MeatStore();
     private int quantity;
-    private final String food;
 
     private MeatStore() {
         Random random = new Random();
         this.quantity = random.nextInt(100, 1000);
-        this.food = "meat";
     }
 
     public static Store getInstance() {
