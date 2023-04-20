@@ -1,13 +1,23 @@
 package src.study.chapter2.Alice;
 
-public enum FoodInformation {
-    ;
+public enum FoodInfo {
 
-    private static final String PLUS = "plus";
-    private static final String MINUS = "minus";
+    VEGETABLE("vegetable","plus"),
+    MEAT("meat", "minus");
 
-    VEGETABLE(PLUS), MEAT(MINUS);
+    private String operator;
+    private String food;
 
-    FoodInformation(String ) {
+    FoodInfo(String food, String operator) {
+        this.food = food;
+        this.operator = operator;
+    }
+
+    public String getOperator() {
+        return operator;
+    }
+
+    public String getFood() {
+        return food;
     }
 }
