@@ -15,12 +15,11 @@ public class Alice {
     }
 
     public void eat(Store store, int quantity) {
-        if (st.equals("meat")) {
-            eatMeat(quantity);
-        }
-        if (food.equals("vegetable")) {
-            eatVegetable(quantity);
-        }
+        store.soldFood(quantity);
+    }
+
+    public void buyFood(Store store, int quantity) {
+        store.soldFood(quantity);
     }
 
     private void eatMeat(int quantity) {
