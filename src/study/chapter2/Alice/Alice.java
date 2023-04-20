@@ -34,7 +34,8 @@ public class Alice {
         this.height -= quantity;
     }
 
-    public boolean isPossiblePassDoor() {
-        return this.height <= DOOR_HEIGHT;
+    public boolean tryToPassDoor(Door door, int aliceHeight) {
+        // + 엘리스 위치 이동 관련 코드
+        return door.canPassDoor(aliceHeight);
     }
 }
