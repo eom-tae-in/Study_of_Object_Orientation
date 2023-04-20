@@ -7,23 +7,24 @@ class Story {
     public static void main(String[] args) {
 
         Input input = new Input();
+        Output output = new Output();
         Door door = new Door();
-        printAskHeight();
+        output.printAskHeight();
         Alice alice = new Alice(input.height());
         while (true) {
-            printSelectFoodQuestion();
+            output.printSelectFoodQuestion();
             FoodInfo food = input.food();
             Store store = StoreAdapter.selectStore(food);
-            printQuantityQuestion();
+            output.printQuantityQuestion();
             int quantity = input.quantity(store);
             alice.buyFood(store, quantity);
             alice.eat(food, quantity);
             if (alice.tryToPassDoor(door, alice.getHeight())) {
-                printSuccessEnterGarden();
+                output.printSuccessEnterGarden();
                 break;
             }
             if (StoreAdapter.canNotPassDoor()) {
-                printFailEnterGarden();
+                output.printFailEnterGarden();
                 break;
             }
         }
