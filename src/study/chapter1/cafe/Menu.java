@@ -5,7 +5,7 @@ import src.study.chapter1.cafe.exception.MenuNotFoundException;
 import java.util.Arrays;
 import java.util.Optional;
 
-public enum Menu {
+enum Menu {
 
     AMERICANO(3000, "americano"),
     LATTE  (4500, "latte"),
@@ -17,20 +17,20 @@ public enum Menu {
     private int price;
     private String menuName;
 
-    private Menu(int price, String menuName) {
+    Menu(int price, String menuName) {
         this.price = price;
         this.menuName = menuName;
     }
 
-    public String getMenuName() {
+    String getMenuName() {
         return menuName;
     }
 
-    public int getPrice() {
+    int getPrice() {
         return price;
     }
 
-    public static Menu isCafeMenu(String menu) {
+    static Menu isCafeMenu(String menu) {
         return checkMenu(menu);
     }
 

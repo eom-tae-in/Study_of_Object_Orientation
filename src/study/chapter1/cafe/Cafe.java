@@ -1,6 +1,6 @@
 package src.study.chapter1.cafe;
 
-public class Cafe {
+class Cafe {
 
     public static void main(String[] args) {
         Customer customer = new Customer();

@@ -4,7 +4,7 @@ import src.study.chapter1.cafe.exception.MenuNotEqualsException;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Cashier {
+class Cashier {
 
     Queue<Menu> orderedList = new LinkedList<>();
 
