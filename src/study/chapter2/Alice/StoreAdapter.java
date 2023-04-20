@@ -1,5 +1,7 @@
 package src.study.chapter2.Alice;
 
+import src.study.chapter2.Alice.exception.NotFoundFoodException;
+
 import java.util.Arrays;
 import java.util.Optional;
 
@@ -19,9 +21,8 @@ public enum StoreAdapter {
     static Store select(String food) {
         Optional<StoreAdapter> any = Arrays.stream(values()).filter(e -> e.food.equals(food)).findAny();
         if (any.isEmpty()) {
-            throw new IllegalStateException();
+            throw new NotFoundFoodException();
         }
         return any.get().store;
     }
-
 }
