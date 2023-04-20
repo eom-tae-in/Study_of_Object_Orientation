@@ -2,7 +2,7 @@ package src.study.chapter2.Alice;
 
 public class MeatStore extends GeneralStore implements Store{
 
-    static GeneralStore instance;
+    private static final GeneralStore meatStore = new MeatStore();
     @Override
     public String getFood() {
         return "meat";
@@ -12,10 +12,7 @@ public class MeatStore extends GeneralStore implements Store{
     }
 
     public static GeneralStore getInstance() {
-        if (instance == null) {
-            instance = new MeatStore();
-        }
-        return instance;
+        return meatStore;
     }
 
     private int quantity = 300;
