@@ -20,10 +20,6 @@ public class VegetableStore implements Store {
         return vegetableStore;
     }
 
-    public String getFood() {
-        return food;
-    }
-
     @Override
     public void soldFood(int quantity) {
         this.quantity -= quantity;
