@@ -7,6 +7,7 @@ public class Door {
     public Door() {
         this.height = 40;
     }
+
     public boolean canPassDoor(int aliceHeight) {
         return this.height >= aliceHeight;
     }

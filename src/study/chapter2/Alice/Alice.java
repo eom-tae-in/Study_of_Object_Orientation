@@ -3,7 +3,6 @@ package src.study.chapter2.Alice;
 
 public class Alice {
 
-    private static final int DOOR_HEIGHT = 40;
     private int height;
 
     public Alice(int height) {

@@ -1,10 +1,7 @@
 package src.study.chapter2.Alice;
 
 import src.study.chapter2.Alice.exception.NotEnoughFoodException;
-import src.study.chapter2.Alice.exception.NotFoundFoodException;
-
 import java.util.Random;
-import java.util.Scanner;
 
 public class MeatStore implements Store{
 
