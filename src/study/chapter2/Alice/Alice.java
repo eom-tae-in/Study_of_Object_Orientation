@@ -9,11 +9,11 @@ public class Alice {
         this.height = height;
     }
 
-    public int getHeight() {
+    int getHeight() {
         return height;
     }
 
-    public void eat(FoodInfo foodInfo, int quantity) {
+    void eat(FoodInfo foodInfo, int quantity) {
         if (foodInfo.isGrowingFood()) {
             this.height += quantity;
             return;
@@ -21,11 +21,11 @@ public class Alice {
         this.height -= quantity;
     }
 
-    public void buyFood(Store store, int quantity) {
+    void buyFood(Store store, int quantity) {
         store.soldFood(quantity);
     }
 
-    public boolean tryToPassDoor(Door door, int aliceHeight) {
+    boolean tryToPassDoor(Door door, int aliceHeight) {
         // + 엘리스 위치 이동 관련 코드
         return door.canPassDoor(aliceHeight);
     }
