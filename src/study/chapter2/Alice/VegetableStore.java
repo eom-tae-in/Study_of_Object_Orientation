@@ -1,5 +1,7 @@
 package src.study.chapter2.Alice;
 
+import src.study.chapter2.Alice.exception.NotEnoughFoodException;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -28,8 +30,10 @@ public class VegetableStore implements Store {
     }
 
     @Override
-    public boolean checkEnoughFood(int quantity) {
-        return this.quantity >= quantity;
+    public void checkEnoughFood(int quantity) {
+        if (this.quantity < quantity) {
+            throw new NotEnoughFoodException();
+        }
     }
 
     @Override
