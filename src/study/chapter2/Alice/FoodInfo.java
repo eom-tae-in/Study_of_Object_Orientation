@@ -10,15 +10,15 @@ public enum FoodInfo {
     VEGETABLE("vegetable", true),
     MEAT("meat", false);
 
-    private boolean growingFood;
     private String food;
+    private boolean growingFood;
 
     FoodInfo(String food, boolean growingFood) {
         this.food = food;
         this.growingFood = growingFood;
     }
 
-    public boolean getGrowingFood() {
+    public boolean isGrowingFood() {
         return growingFood;
     }
 
