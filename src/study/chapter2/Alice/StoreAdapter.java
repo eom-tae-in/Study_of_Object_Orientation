@@ -20,11 +20,7 @@ public enum StoreAdapter {
     }
 
     static Store selectStore(FoodInfo foodInfo) {
-        checkStoreExist(foodInfo);
-    }
-
-    static String getFoodName(String food) {
-
+        return checkStoreExist(foodInfo);
     }
 
     static Store checkStoreExist(FoodInfo checkingFoodInfo) {
