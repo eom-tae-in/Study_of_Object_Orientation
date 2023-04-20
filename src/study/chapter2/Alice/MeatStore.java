@@ -2,6 +2,7 @@ package src.study.chapter2.Alice;
 
 import src.study.chapter2.Alice.exception.NotFoundFoodException;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class MeatStore implements Store{
@@ -11,8 +12,8 @@ public class MeatStore implements Store{
     private final String food;
 
     private MeatStore() {
-        Scanner sc = new Scanner(System.in);
-        this.quantity = sc.nextInt();
+        Random random = new Random();
+        this.quantity = random.nextInt(100, 1000);
         this.food = "meat";
     }
 
