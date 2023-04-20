@@ -3,7 +3,6 @@ package src.study.chapter2.Alice;
 import src.study.chapter2.Alice.exception.NotFoundFoodException;
 
 import java.util.Arrays;
-import java.util.Optional;
 
 public enum StoreAdapter {
 
@@ -18,9 +17,8 @@ public enum StoreAdapter {
         this.store = generalStore;
     }
 
-    static Store select(String food) {
-        checkStoreExist(food);
-        return any.get().store;
+    static Store selectStore(String food) {
+         return valueOf(food).store;
     }
 
     static void checkStoreExist(String food) {
