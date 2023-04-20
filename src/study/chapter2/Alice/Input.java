@@ -13,11 +13,10 @@ public class Input {
         return sc.nextInt();
     }
 
-    public String food() {
+    public FoodInfo food() {
         try {
             String food = sc.next();
-            StoreAdapter.checkStoreExist(food);
-            return food;
+            return FoodInfo.checkFoodExist(food);
         } catch (NotFoundFoodException e) {
             System.out.println(e.getMessage());
             return food();
