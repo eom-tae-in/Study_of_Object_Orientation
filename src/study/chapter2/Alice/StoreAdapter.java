@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-public enum StoreAdapter {
+enum StoreAdapter {
 
     VEGETABLE_STORE(FoodInfo.VEGETABLE, VegetableStore.getInstance()),
     MEAT_STORE(FoodInfo.MEAT, MeatStore.getInstance());
@@ -22,7 +22,7 @@ public enum StoreAdapter {
         return checkStoreExist(foodInfo);
     }
 
-    static Store checkStoreExist(FoodInfo checkingFoodInfo) {
+    private static Store checkStoreExist(FoodInfo checkingFoodInfo) {
         Optional<StoreAdapter> checkedFoodInfo = getFoodStore(checkingFoodInfo);
         if (checkedFoodInfo.isPresent()) {
             return checkedFoodInfo.get().store;

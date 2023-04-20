@@ -1,7 +1,7 @@
 package src.study.chapter2.Alice;
 
 
-public class Alice {
+class Alice {
 
     private int height;
 

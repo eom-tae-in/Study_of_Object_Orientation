@@ -2,7 +2,7 @@ package src.study.chapter2.Alice;
 
 import static src.study.chapter2.Alice.Output.*;
 
-public class Story {
+class Story {
 
     public static void main(String[] args) {
 

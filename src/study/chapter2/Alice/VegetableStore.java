@@ -3,7 +3,7 @@ package src.study.chapter2.Alice;
 import src.study.chapter2.Alice.exception.NotEnoughFoodException;
 import java.util.Random;
 
-public class VegetableStore implements Store {
+class VegetableStore implements Store {
 
     private static final Store vegetableStore = new VegetableStore();
     private int quantity;
@@ -13,7 +13,7 @@ public class VegetableStore implements Store {
         this.quantity = random.nextInt(100, 1000);
     }
 
-    public static Store getInstance() {
+    static Store getInstance() {
         return vegetableStore;
     }
 

@@ -4,7 +4,7 @@ import src.study.chapter2.Alice.exception.NotFoundFoodException;
 import java.util.Arrays;
 import java.util.Optional;
 
-public enum FoodInfo {
+enum FoodInfo {
 
     VEGETABLE("vegetable", true),
     MEAT("meat", false);

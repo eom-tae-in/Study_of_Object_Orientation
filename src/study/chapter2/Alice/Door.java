@@ -1,6 +1,6 @@
 package src.study.chapter2.Alice;
 
-public class Door {
+class Door {
 
     private final int height;
 
