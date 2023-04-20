@@ -45,7 +45,7 @@ public enum StoreAdapter {
                 .map(foodInfo -> getFoodStore(foodInfo).orElse(null)).toList();
     }
     private static List<StoreAdapter> selectShorteningFoodStores() {
-        return Arrays.stream(FoodInfo.values()).filter(FoodInfo::isGrowingFood)
+        return Arrays.stream(FoodInfo.values()).filter(foodInfo -> !(foodInfo.isGrowingFood()))
                 .map(foodInfo -> getFoodStore(foodInfo).orElse(null)).toList();
     }
 
