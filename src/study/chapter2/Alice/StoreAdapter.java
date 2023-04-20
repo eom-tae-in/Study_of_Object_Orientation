@@ -36,20 +36,22 @@ public enum StoreAdapter {
     }
 
     static boolean canNotPassDoor() {
-        List<FoodInfo> growingFood = Arrays.stream(FoodInfo.values()).filter(FoodInfo::isGrowingFood).toList();
-        List<StoreAdapter> growingFoodStores = 
-                growingFood.stream().map(foodInfo -> getFoodStore(foodInfo).orElse(null)).toList();
-        List<FoodInfo> shorteningFood =
-                Arrays.stream(FoodInfo.values()).filter(foodInfo -> !(foodInfo.isGrowingFood())).toList();
-        List<StoreAdapter> shorteningFoodStores =
-                shorteningFood.stream().map(foodInfo -> getFoodStore(foodInfo).orElse(null)).toList();
+        List<StoreAdapter> growingFoodStores = selectGrowingFoodStores();
+        List<StoreAdapter> shorteningFoodStores = selectShorteningFoodStores();
         return (isEmptyInFoodStores(growingFoodStores) || isEmptyInFoodStores(shorteningFoodStores));
+    }
+
+    private static List<StoreAdapter> selectGrowingFoodStores() {
+        return Arrays.stream(FoodInfo.values()).filter(FoodInfo::isGrowingFood)
+                .map(foodInfo -> getFoodStore(foodInfo).orElse(null)).toList();
+    }
+    private static List<StoreAdapter> selectShorteningFoodStores() {
+        return Arrays.stream(FoodInfo.values()).filter(FoodInfo::isGrowingFood)
+                .map(foodInfo -> getFoodStore(foodInfo).orElse(null)).toList();
     }
 
     private static boolean isEmptyInFoodStores(List<StoreAdapter> growingFoodStores) {
         return growingFoodStores.stream().noneMatch(storeAdapter -> (storeAdapter.store.checkFoodInStockOrNot()));
     }
-
-
 }
 
