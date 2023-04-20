@@ -25,14 +25,6 @@ public class Alice {
         store.soldFood(quantity);
     }
 
-    private void eatMeat(int quantity) {
-        this.height += quantity;
-    }
-
-    private void eatVegetable(int quantity) {
-        this.height -= quantity;
-    }
-
     public boolean tryToPassDoor(Door door, int aliceHeight) {
         // + 엘리스 위치 이동 관련 코드
         return door.canPassDoor(aliceHeight);
