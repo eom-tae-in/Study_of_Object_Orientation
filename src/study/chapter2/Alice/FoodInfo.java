@@ -3,6 +3,7 @@ package src.study.chapter2.Alice;
 import src.study.chapter2.Alice.exception.NotFoundFoodException;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 public enum FoodInfo {
 
@@ -25,9 +26,12 @@ public enum FoodInfo {
         return food;
     }
 
-    static void checkFoodExist(String food) {
-        if (Arrays.stream(values()).noneMatch(foodInfo -> foodInfo.food.equals(food))) {
-            throw new NotFoundFoodException();
+    static FoodInfo checkFoodExist(String checkingFood) {
+        Optional<FoodInfo> checkedFood =
+                Arrays.stream(values()).filter(foodInfo -> foodInfo.food.equals(checkingFood)).findAny();
+        if (checkedFood.isPresent()) {
+            return checkedFood.get();
         }
+        throw new NotFoundFoodException();
     }
 }
