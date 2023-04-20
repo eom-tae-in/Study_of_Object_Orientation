@@ -17,12 +17,8 @@ public enum FoodInfo {
         this.growingFood = growingFood;
     }
 
-    public boolean isGrowingFood() {
+    boolean isGrowingFood() {
         return growingFood;
-    }
-
-    public String getFood() {
-        return food;
     }
 
     static FoodInfo checkFoodExist(String checkingFood) {
