@@ -5,24 +5,25 @@ import java.util.Scanner;
 public class VegetableStore extends GeneralStore implements Store {
     private static final GeneralStore vegetableStore = new VegetableStore();
     private int quantity;
+    private final String ingredient;
 
     private VegetableStore() {
         Scanner sc = new Scanner(System.in);
         this.quantity = sc.nextInt();
+        this.ingredient = "vegetable";
     }
 
     public static GeneralStore getInstance() {
         return vegetableStore;
     }
 
-    @Override
-    public String getFood() {
-        return "vegetable";
+    public String getIngredient() {
+        return ingredient;
     }
 
     @Override
     public void reduceWeight(int weight) {
-        this.quantity -= (weight * 2);
+        this.quantity -= weight;
     }
 
     @Override
