@@ -4,10 +4,13 @@ import static src.study.chapter2.Alice.Input.*;
 import static src.study.chapter2.Alice.Output.*;
 
 public class Story {
-    static Alice alice;
-    static GeneralStore store;
-    static Story story;
+
     public static void main(String[] args) {
+        printAskHeight();
+        Alice alice = new Alice(height());
+        printSelectFoodQuestion();
+        store = GeneralStore.selectStore(foodSelect());
+        return store.checkFoodInStockOrNot();
         story = new Story();
         story.setUpStory();
         while (story.selectFood()) {
@@ -28,7 +31,7 @@ public class Story {
     }
 
     public void setUpStory() {
-        printHeightQuestion();
+        printAskHeight();
         alice = Alice.madeBy(height());
     }
 

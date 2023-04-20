@@ -2,7 +2,7 @@ package src.study.chapter2.Alice;
 
 public class Output {
 
-    public static void printHeightQuestion() {
+    public static void printAskHeight() {
         System.out.println("Alice의 키를 입력해주세요: ");
     }
 
