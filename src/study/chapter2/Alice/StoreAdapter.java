@@ -23,7 +23,7 @@ public enum StoreAdapter {
         return any.get().store;
     }
 
-    private static boolean checkStoreExist(String food) {
+    static boolean checkStoreExist(String food) {
         return Arrays.stream(values()).anyMatch(e -> e.food.equals(food));
     }
 }
