@@ -21,14 +21,6 @@ public class MeatStore implements Store{
         return meatStore;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public String getFood() {
-        return food;
-    }
-
     @Override
     public void soldFood(int quantity) {
         this.quantity -= quantity;
