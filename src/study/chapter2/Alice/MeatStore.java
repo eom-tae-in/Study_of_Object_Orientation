@@ -1,24 +1,28 @@
 package src.study.chapter2.Alice;
 
+import java.util.Scanner;
+
 public class MeatStore extends GeneralStore implements Store{
 
     private static final GeneralStore meatStore = new MeatStore();
-    @Override
-    public String getFood() {
-        return "meat";
-    }
+    private int quantity;
 
     private MeatStore() {
+        Scanner sc = new Scanner(System.in);
+        this.quantity = sc.nextInt();
     }
 
     public static GeneralStore getInstance() {
         return meatStore;
     }
 
-    private int quantity = 300;
-
     public int getQuantity() {
         return quantity;
+    }
+
+    @Override
+    public String getFood() {
+        return "meat";
     }
 
     @Override
