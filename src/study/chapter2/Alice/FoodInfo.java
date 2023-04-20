@@ -7,19 +7,19 @@ import java.util.Optional;
 
 public enum FoodInfo {
 
-    VEGETABLE("vegetable","plus"),
-    MEAT("meat", "minus");
+    VEGETABLE("vegetable", true),
+    MEAT("meat", false);
 
-    private String operator;
+    private boolean growingFood;
     private String food;
 
-    FoodInfo(String food, String operator) {
+    FoodInfo(String food, boolean growingFood) {
         this.food = food;
-        this.operator = operator;
+        this.growingFood = growingFood;
     }
 
-    public String getOperator() {
-        return operator;
+    public boolean getGrowingFood() {
+        return growingFood;
     }
 
     public String getFood() {
