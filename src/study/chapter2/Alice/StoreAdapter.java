@@ -1,29 +1,38 @@
 package src.study.chapter2.Alice;
 
 import src.study.chapter2.Alice.exception.NotFoundFoodException;
+import src.study.chapter2.Alice.exception.NotFoundFoodStoreException;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 public enum StoreAdapter {
 
-    VEGETABLE_STORE("vegetable", VegetableStore.getInstance()),
-    MEAT_STORE("meat", MeatStore.getInstance());
+    VEGETABLE_STORE(FoodInfo.VEGETABLE, VegetableStore.getInstance()),
+    MEAT_STORE(FoodInfo.MEAT, MeatStore.getInstance());
 
-    private String food;
+    private FoodInfo foodInfo;
     private Store store;
 
-    StoreAdapter(String food, Store generalStore) {
-        this.food = food;
+    StoreAdapter(FoodInfo foodInfo, Store generalStore) {
+        this.foodInfo = foodInfo;
         this.store = generalStore;
     }
 
-    static Store selectStore(String food) {
-         return valueOf(food).store;
+    static Store selectStore(FoodInfo foodInfo) {
+        checkStoreExist(foodInfo);
     }
 
-    static void checkStoreExist(String food) {
-        if (Arrays.stream(values()).noneMatch(e -> e.food.equals(food))) {
-            throw new NotFoundFoodException();
+    static String getFoodName(String food) {
+
+    }
+
+    static Store checkStoreExist(FoodInfo checkingFoodInfo) {
+        Optional<StoreAdapter> checkedFoodInfo =
+                Arrays.stream(values()).filter(storeAdapter -> storeAdapter.foodInfo.equals(checkingFoodInfo)).findAny();
+        if (checkedFoodInfo.isPresent()) {
+            return checkedFoodInfo.get().store;
         }
+        throw new NotFoundFoodStoreException();
     }
 }
