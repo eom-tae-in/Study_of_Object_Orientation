@@ -7,12 +7,12 @@ import java.util.Scanner;
 
 public class Input {
 
-    private Store store;
-
     Scanner sc = new Scanner(System.in);
+
     public int height() {
         return sc.nextInt();
     }
+
     public String food() {
         try {
             String food = sc.next();
@@ -23,6 +23,7 @@ public class Input {
             return food();
         }
     }
+
     public int quantity(Store store) {
         try {
             int quantity = sc.nextInt();
