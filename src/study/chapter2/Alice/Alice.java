@@ -14,8 +14,12 @@ public class Alice {
         return height;
     }
 
-    public void eat(Store store, int quantity) {
-        store.soldFood(quantity);
+    public void eat(FoodInfo foodInfo, int quantity) {
+        if (foodInfo.isGrowingFood()) {
+            this.height += quantity;
+            return;
+        }
+        this.height -= quantity;
     }
 
     public void buyFood(Store store, int quantity) {
