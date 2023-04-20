@@ -17,15 +17,20 @@ public class Cashier {
     }
 
     void isCustomerMenu(Menu madeMenu) {
-        try {
-            if (!orderedList.peek().equals(madeMenu)) {
-                throw new MenuNotEqualsException();
-            }
-            Menu menu = orderedList.poll();
-            System.out.println("정상적으로 처리되었습니다.");
-            System.out.println("주문하신 " + menu.getMenuName() + " 나왔습니다~~");
-        } catch (IllegalArgumentException e) {
-            System.out.println("손님이 주문한 메뉴와 바리스타가 만든 메뉴가 다릅니다.");
+        Menu menu = compareMenu(orderedList.peek(), madeMenu);
+        printMenuReady(menu);
+    }
+
+    private Menu compareMenu(Menu orderedMenu, Menu madeMenu) {
+        if (!orderedMenu.equals(madeMenu)) {
+            throw new MenuNotEqualsException();
         }
+        return orderedList.poll();
+    }
+
+    private void printMenuReady(Menu menu) {
+        System.out.println("정상적으로 처리되었습니다.");
+        System.out.println("주문하신 " + menu.getMenuName() + " 나왔습니다~~");
+        System.out.println(menu.getMenuName()+"의 가격은 " + menu.getPrice() + "입니다.");
     }
 }
