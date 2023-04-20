@@ -29,7 +29,7 @@ public class MeatStore implements Store{
     }
 
     @Override
-    public void reduceWeight(int weight) {
+    public void soldFood(int weight) {
         this.quantity -= weight;
     }
 

@@ -14,8 +14,8 @@ public class Alice {
         return height;
     }
 
-    public void eat(String food, int quantity) {
-        if (food.equals("meat")) {
+    public void eat(Store store, int quantity) {
+        if (st.equals("meat")) {
             eatMeat(quantity);
         }
         if (food.equals("vegetable")) {
