@@ -19,10 +19,11 @@ public enum StoreAdapter {
     }
 
     static Store select(String food) {
-        Optional<StoreAdapter> any = Arrays.stream(values()).filter(e -> e.food.equals(food)).findAny();
-        if (any.isEmpty()) {
-            throw new NotFoundFoodException();
-        }
+        checkStoreExist(food);
         return any.get().store;
+    }
+
+    private static boolean checkStoreExist(String food) {
+        return Arrays.stream(values()).anyMatch(e -> e.food.equals(food));
     }
 }
