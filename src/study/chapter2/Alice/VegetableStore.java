@@ -1,5 +1,6 @@
 package src.study.chapter2.Alice;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class VegetableStore implements Store {
@@ -8,8 +9,8 @@ public class VegetableStore implements Store {
     private final String food;
 
     private VegetableStore() {
-        Scanner sc = new Scanner(System.in);
-        this.quantity = sc.nextInt();
+        Random random = new Random();
+        this.quantity = random.nextInt(100, 1000);
         this.food = "vegetable";
     }
 
