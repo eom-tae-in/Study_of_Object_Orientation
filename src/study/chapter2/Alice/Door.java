@@ -4,11 +4,11 @@ public class Door {
 
     private final int height;
 
-    public Door() {
+    Door() {
         this.height = 40;
     }
 
-    public boolean canPassDoor(int aliceHeight) {
+    boolean canPassDoor(int aliceHeight) {
         return this.height >= aliceHeight;
     }
 }
