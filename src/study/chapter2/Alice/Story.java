@@ -1,43 +1,30 @@
 package src.study.chapter2.Alice;
 
-import static src.study.chapter2.Alice.Input.*;
 import static src.study.chapter2.Alice.Output.*;
 
 public class Story {
 
     public static void main(String[] args) {
+        Input input = new Input();
+        Door door = new Door();
         printAskHeight();
-        Alice alice = new Alice(height());
-        printSelectFoodQuestion();
-        store = Store.selectStore(food());
-        return store.checkFoodInStockOrNot();
-        story = new Story();
-        story.setUpStory();
-        while (story.selectFood()) {
+        Alice alice = new Alice(input.height());
+        while (true) {
+            printSelectFoodQuestion();
+            FoodInfo food = input.food();
+            Store store = StoreAdapter.selectStore(food);
             printQuantityQuestion();
-            int quantity = quantity();
-            if (!store.checkEnoughFood(quantity)) {
-                printNotEnoughFood();
-                continue;
-            }
-            alice.eat(store.getFood(), quantity);
-            store.reduceWeight(quantity);
-            if (alice.isPossiblePassDoor()) {
+            int quantity = input.quantity(store);
+            alice.buyFood(store, quantity);
+            alice.eat(food, quantity);
+            if (alice.tryToPassDoor(door, alice.getHeight())) {
                 printSuccessEnterGarden();
-                return;
+                break;
+            }
+            if (StoreAdapter.canNotPassDoor()) {
+                printFailEnterGarden();
+                break;
             }
         }
-        printFailEnterGarden();
-    }
-
-    public void setUpStory() {
-        printAskHeight();
-        alice = Alice.madeBy(height());
-    }
-
-    public boolean selectFood() {
-        printSelectFoodQuestion();
-        store = GeneralStore.selectStore(food());
-        return store.checkFoodInStockOrNot();
     }
 }
