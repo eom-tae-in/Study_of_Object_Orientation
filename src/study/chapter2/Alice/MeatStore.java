@@ -28,7 +28,7 @@ public class MeatStore implements Store{
 
     @Override
     public void checkEnoughFood(int quantity) {
-        if (this.quantity >= quantity) {
+        if (this.quantity < quantity) {
             throw new NotFoundFoodException();
         }
     }
