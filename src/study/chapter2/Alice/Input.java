@@ -8,11 +8,11 @@ public class Input {
 
     Scanner sc = new Scanner(System.in);
 
-    public int height() {
+    int height() {
         return sc.nextInt();
     }
 
-    public FoodInfo food() {
+    FoodInfo food() {
         try {
             String food = sc.next();
             return FoodInfo.checkFoodExist(food);
@@ -21,7 +21,7 @@ public class Input {
         }
     }
 
-    public int quantity(Store store) {
+    int quantity(Store store) {
         try {
             int quantity = sc.nextInt();
             store.checkEnoughFood(quantity);
