@@ -12,21 +12,21 @@ public enum Menu {
     TEA(4000, "tea");
 
     private int price;
-    private String menu;
+    private String menuName;
 
-    private Menu(int price, String menu) {
+    private Menu(int price, String menuName) {
         this.price = price;
-        this.menu = menu;
+        this.menuName = menuName;
     }
 
-    public String getMenu() {
-        return menu;
+    public String getMenuName() {
+        return menuName;
     }
 
     public static Menu isCafeMenu(String menu) {
         try {
             for (Menu n : values()) {
-                if (n.menu.equals(menu)) {
+                if (n.menuName.equals(menu)) {
                     System.out.println("손님 " + n.price + "원입니다.");
                     return n;
                 }
