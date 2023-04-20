@@ -1,5 +1,7 @@
 package src.study.chapter2.Alice;
 
+import src.study.chapter2.Alice.exception.NotFoundFoodException;
+
 import java.util.Scanner;
 
 public class MeatStore implements Store{
@@ -32,8 +34,10 @@ public class MeatStore implements Store{
     }
 
     @Override
-    public boolean checkEnoughFood(int quantity) {
-        return this.quantity >= quantity;
+    public void checkEnoughFood(int quantity) {
+        if (this.quantity >= quantity) {
+            throw new NotFoundFoodException();
+        }
     }
 
     @Override
