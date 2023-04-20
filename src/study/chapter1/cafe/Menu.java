@@ -26,6 +26,10 @@ public enum Menu {
         return menuName;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
     public static Menu isCafeMenu(String menu) {
         return checkMenu(menu);
     }
