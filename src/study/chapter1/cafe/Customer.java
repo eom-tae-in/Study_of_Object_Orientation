@@ -4,15 +4,14 @@ import java.util.Scanner;
 
 public class Customer {
 
-    private final Menu myMenu;
+    private final String myMenu;
 
     public Customer() {
         Scanner sc = new Scanner(System.in);
-        String menu = sc.next();
-        this.myMenu = Menu.isCafeMenu(menu);
+        this.myMenu = sc.next();
     }
 
-    public Menu getMyMenu() {
+    public String getMyMenu() {
         return myMenu;
     }
 
