@@ -9,7 +9,7 @@ public class Story {
         printAskHeight();
         Alice alice = new Alice(height());
         printSelectFoodQuestion();
-        store = GeneralStore.selectStore(foodSelect());
+        store = GeneralStore.selectStore(food());
         return store.checkFoodInStockOrNot();
         story = new Story();
         story.setUpStory();
@@ -37,7 +37,7 @@ public class Story {
 
     public boolean selectFood() {
         printSelectFoodQuestion();
-        store = GeneralStore.selectStore(foodSelect());
+        store = GeneralStore.selectStore(food());
         return store.checkFoodInStockOrNot();
     }
 }

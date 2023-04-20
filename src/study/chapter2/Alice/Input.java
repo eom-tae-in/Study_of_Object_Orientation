@@ -8,7 +8,7 @@ public class Input {
     public static int height() {
         return sc.nextInt();
     }
-    public static String foodSelect() {
+    public static String food() {
         return sc.next();
     }
     public static int quantity() {

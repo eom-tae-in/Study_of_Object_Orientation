@@ -6,12 +6,12 @@ public class MeatStore extends GeneralStore implements Store{
 
     private static final GeneralStore meatStore = new MeatStore();
     private int quantity;
-    private final String ingredient;
+    private final String food;
 
     private MeatStore() {
         Scanner sc = new Scanner(System.in);
         this.quantity = sc.nextInt();
-        this.ingredient = "meat";
+        this.food = "meat";
     }
 
     public static GeneralStore getInstance() {
@@ -22,8 +22,8 @@ public class MeatStore extends GeneralStore implements Store{
         return quantity;
     }
 
-    public String getIngredient() {
-        return ingredient;
+    public String getFood() {
+        return food;
     }
 
     @Override
