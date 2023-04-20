@@ -1,7 +1,7 @@
 package src.study.chapter2.Alice;
 
 public class VegetableStore extends GeneralStore implements Store {
-    private static final GeneralStore instance = new VegetableStore();
+    private static final GeneralStore vegetableStore = new VegetableStore();
     private int quantity = 1000;
 
     @Override
@@ -13,7 +13,7 @@ public class VegetableStore extends GeneralStore implements Store {
     }
 
     public static GeneralStore getInstance() {
-        return instance;
+        return vegetableStore;
     }
 
     @Override
