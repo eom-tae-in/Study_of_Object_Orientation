@@ -12,8 +12,8 @@ public class Cashier {
         orderedList.add(menu);
     }
 
-    Menu requestMenu(Barista barista, Menu menu) {
-        return barista.makeMenu(menu);
+    Menu requestMenu(Barista barista) {
+        return barista.makeMenu(orderedList.peek());
     }
 
     void isCustomerMenu(Menu madeMenu) {

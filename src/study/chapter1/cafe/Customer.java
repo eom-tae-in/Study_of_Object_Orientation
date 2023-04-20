@@ -15,7 +15,7 @@ public class Customer {
         return myMenu;
     }
 
-    void order(Cashier cashier, Menu menu) {
-        cashier.ordered(menu);
+    void order(Cashier cashier) {
+        cashier.ordered(Menu.isCafeMenu(myMenu));
     }
 }
