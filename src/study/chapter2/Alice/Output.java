@@ -7,7 +7,7 @@ public class Output {
     }
 
     public static void printSelectFoodQuestion() {
-        System.out.println("Alice에게 고기를 먹일 건가요? 채소를 먹일 건가요?");
+        System.out.println("Alice에게 어떤 음식을 먹일건가요?");
         System.out.println("고기를 먹일거면 meat, 채소를 먹일거면 vegetable을 입력해주세요");
     }
 
