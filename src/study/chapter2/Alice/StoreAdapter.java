@@ -49,8 +49,8 @@ enum StoreAdapter {
                 .map(foodInfo -> getFoodStore(foodInfo).orElse(null)).toList();
     }
 
-    private static boolean isEmptyInFoodStores(List<StoreAdapter> growingFoodStores) {
-        return growingFoodStores.stream().noneMatch(storeAdapter -> (storeAdapter.store.checkFoodInStockOrNot()));
+    private static boolean isEmptyInFoodStores(List<StoreAdapter> foodStores) {
+        return foodStores.stream().noneMatch(foodStore -> (foodStore.store.checkFoodInStockOrNot()));
     }
 }
 
