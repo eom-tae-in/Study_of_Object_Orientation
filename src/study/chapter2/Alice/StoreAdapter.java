@@ -9,8 +9,8 @@ enum StoreAdapter {
     VEGETABLE_STORE(FoodInfo.VEGETABLE, VegetableStore.getInstance()),
     MEAT_STORE(FoodInfo.MEAT, MeatStore.getInstance());
 
-    private FoodInfo foodInfo;
-    private Store store;
+    private final FoodInfo foodInfo;
+    private final Store store;
 
     StoreAdapter(FoodInfo foodInfo, Store generalStore) {
         this.foodInfo = foodInfo;

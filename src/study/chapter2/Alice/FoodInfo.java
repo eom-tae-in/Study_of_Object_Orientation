@@ -9,8 +9,8 @@ enum FoodInfo {
     VEGETABLE("vegetable", true),
     MEAT("meat", false);
 
-    private String food;
-    private boolean growingFood;
+    private final String food;
+    private final boolean growingFood;
 
     FoodInfo(String food, boolean growingFood) {
         this.food = food;

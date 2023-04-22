@@ -14,8 +14,8 @@ enum Menu {
     SODA(3000, "soda"),
     TEA(4000, "tea");
 
-    private int price;
-    private String menuName;
+    private final int price;
+    private final String menuName;
 
     Menu(int price, String menuName) {
         this.price = price;
