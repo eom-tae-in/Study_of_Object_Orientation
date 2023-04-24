@@ -22,11 +22,10 @@ enum FoodInfo {
     }
 
     static FoodInfo checkFoodExist(String checkingFood) {
-        Optional<FoodInfo> checkedFood =
-                Arrays.stream(values()).filter(foodInfo -> foodInfo.food.equals(checkingFood)).findAny();
-        if (checkedFood.isPresent()) {
-            return checkedFood.get();
-        }
-        throw new NotFoundFoodException();
+        return getFood(checkingFood);
+    }
+    static FoodInfo getFood(String checkingFood) {
+        return Arrays.stream(values()).filter(foodInfo -> foodInfo.food.equals(checkingFood))
+                .findAny().orElseThrow(NotFoundFoodException::new);
     }
 }
