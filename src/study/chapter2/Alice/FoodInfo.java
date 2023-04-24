@@ -24,7 +24,7 @@ enum FoodInfo {
     static FoodInfo checkFoodExist(String checkingFood) {
         return getFood(checkingFood);
     }
-    static FoodInfo getFood(String checkingFood) {
+    private static FoodInfo getFood(String checkingFood) {
         return Arrays.stream(values()).filter(foodInfo -> foodInfo.food.equals(checkingFood))
                 .findAny().orElseThrow(NotFoundFoodException::new);
     }
