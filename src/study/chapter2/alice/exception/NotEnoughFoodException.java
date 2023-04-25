@@ -1,4 +1,4 @@
-package src.study.chapter2.Alice.exception;
+package src.study.chapter2.alice.exception;
 
 public class NotEnoughFoodException extends IllegalArgumentException{
     public NotEnoughFoodException() {

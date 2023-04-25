@@ -1,8 +1,7 @@
-package src.study.chapter2.Alice;
+package src.study.chapter2.alice;
 
-import src.study.chapter2.Alice.exception.NotFoundFoodException;
+import src.study.chapter2.alice.exception.NotFoundFoodException;
 import java.util.Arrays;
-import java.util.Optional;
 
 enum FoodInfo {
 

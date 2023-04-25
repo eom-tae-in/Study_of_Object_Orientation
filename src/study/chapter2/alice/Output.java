@@ -1,4 +1,4 @@
-package src.study.chapter2.Alice;
+package src.study.chapter2.alice;
 
 class Output {
 

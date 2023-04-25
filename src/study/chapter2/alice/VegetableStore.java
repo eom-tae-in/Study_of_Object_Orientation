@@ -1,20 +1,20 @@
-package src.study.chapter2.Alice;
+package src.study.chapter2.alice;
 
-import src.study.chapter2.Alice.exception.NotEnoughFoodException;
+import src.study.chapter2.alice.exception.NotEnoughFoodException;
 import java.util.Random;
 
-class MeatStore implements Store{
+class VegetableStore implements Store {
 
-    private static final Store meatStore = new MeatStore();
+    private static final Store vegetableStore = new VegetableStore();
     private int quantity;
 
-    private MeatStore() {
+    private VegetableStore() {
         Random random = new Random();
         this.quantity = random.nextInt(100, 1000);
     }
 
     static Store getInstance() {
-        return meatStore;
+        return vegetableStore;
     }
 
     @Override

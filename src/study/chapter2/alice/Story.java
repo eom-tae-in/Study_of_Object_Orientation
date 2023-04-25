@@ -1,6 +1,4 @@
-package src.study.chapter2.Alice;
-
-import static src.study.chapter2.Alice.Output.*;
+package src.study.chapter2.alice;
 
 class Story {
 
