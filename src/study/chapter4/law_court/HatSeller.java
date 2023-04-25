@@ -1,0 +1,23 @@
+package src.study.chapter4.law_court;
+
+class HatSeller implements Witness {
+
+    private static final Witness witnessInstance = new HatSeller();
+
+    private HatSeller() {
+    }
+
+    static Witness getWitnessInstance() {
+        return witnessInstance;
+    }
+
+    @Override
+    public Witness enterCourt() {
+        return Members.HAT_SELLER.getWitness();
+    }
+
+    @Override
+    public void testify() {
+        System.out.println("증인으로 출석하게 된 모자 장수입니다. 모든 질문에 성실히 답변하겠습니다.");
+    }
+}
