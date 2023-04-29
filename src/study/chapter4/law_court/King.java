@@ -12,6 +12,11 @@ class King implements Judge {
     }
 
     @Override
+    public void start() {
+        System.out.println("재판을 시작하겠습니다.(판사: king)");
+    }
+
+    @Override
     public Witness callWitness(Rabbit rabbit) {
         return rabbit.getWitness();
     }
