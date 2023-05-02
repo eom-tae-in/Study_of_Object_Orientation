@@ -8,7 +8,6 @@ import src.study.chapter4.law_court.manager.WhiteRabbit;
 import src.study.chapter4.law_court.witness.Alice;
 import src.study.chapter4.law_court.witness.Chef;
 import src.study.chapter4.law_court.witness.HatSeller;
-
 import java.util.Arrays;
 import java.util.List;
 
