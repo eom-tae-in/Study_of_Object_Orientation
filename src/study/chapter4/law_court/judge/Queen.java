@@ -1,6 +1,11 @@
-package src.study.chapter4.law_court;
+package src.study.chapter4.law_court.judge;
 
-class Queen implements Judge, Witness {
+import src.study.chapter4.law_court.Judge;
+import src.study.chapter4.law_court.Members;
+import src.study.chapter4.law_court.Manager;
+import src.study.chapter4.law_court.Witness;
+
+public class Queen implements Judge, Witness {
 
     private static final Judge judgeInstance = new Queen();
     private static final Witness witnessInstance = new Queen();
@@ -8,11 +13,11 @@ class Queen implements Judge, Witness {
     private Queen() {
     }
 
-    static Judge getJudgeInstance() {
+    public static Judge getJudgeInstance() {
         return judgeInstance;
     }
 
-    static Witness getWitnessInstance() {
+    public static Witness getWitnessInstance() {
         return witnessInstance;
     }
 
@@ -22,8 +27,8 @@ class Queen implements Judge, Witness {
     }
 
     @Override
-    public Witness callWitness(Rabbit rabbit) {
-        return rabbit.getWitness();
+    public Witness callWitness(Manager manager) {
+        return manager.getWitness();
     }
 
     @Override

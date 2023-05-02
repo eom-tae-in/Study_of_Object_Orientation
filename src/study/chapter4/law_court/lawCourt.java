@@ -8,10 +8,10 @@ class lawCourt {
         output.printAskJudge();
         Judge judge = input.judge();
         output.printAskRabbit();
-        Rabbit rabbit = input.rabbit();
-        rabbit.setWitnesses();
-        while (rabbit.witnessNumber() > 0) {
-            Witness witness = judge.callWitness(rabbit);
+        Manager manager = input.rabbit();
+        manager.setWitnesses();
+        while (manager.witnessNumber() > 0) {
+            Witness witness = judge.callWitness(manager);
             witness.testify();
         }
     }

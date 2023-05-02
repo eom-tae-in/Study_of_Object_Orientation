@@ -1,9 +1,9 @@
 package src.study.chapter4.law_court;
 
-interface Judge {
+public interface Judge {
 
     void start();
-    Witness callWitness(Rabbit rabbit);
+    Witness callWitness(Manager manager);
     void doTestify(Witness witness);
     Judge changeJudge(Judge judge);
 }

@@ -1,6 +1,6 @@
 package src.study.chapter4.law_court;
 
-interface Rabbit {
+public interface Manager {
 
     Witness getWitness();
     void setWitnesses();

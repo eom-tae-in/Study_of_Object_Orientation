@@ -1,13 +1,17 @@
-package src.study.chapter4.law_court;
+package src.study.chapter4.law_court.judge;
 
-class King implements Judge {
+import src.study.chapter4.law_court.Judge;
+import src.study.chapter4.law_court.Manager;
+import src.study.chapter4.law_court.Witness;
+
+public class King implements Judge {
 
     private static final Judge judgeInstance = new King();
 
     private King() {
     }
 
-    static Judge getJudgeInstance() {
+    public static Judge getJudgeInstance() {
         return judgeInstance;
     }
 
@@ -17,8 +21,8 @@ class King implements Judge {
     }
 
     @Override
-    public Witness callWitness(Rabbit rabbit) {
-        return rabbit.getWitness();
+    public Witness callWitness(Manager manager) {
+        return manager.getWitness();
     }
 
     @Override

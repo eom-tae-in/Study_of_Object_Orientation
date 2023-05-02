@@ -1,13 +1,16 @@
-package src.study.chapter4.law_court;
+package src.study.chapter4.law_court.witness;
 
-class Chef implements Witness{
+import src.study.chapter4.law_court.Members;
+import src.study.chapter4.law_court.Witness;
+
+public class Chef implements Witness {
 
     private static final Witness witnessInstance = new Chef();
 
     private Chef() {
     }
 
-    static Witness getWitnessInstance() {
+    public static Witness getWitnessInstance() {
         return witnessInstance;
     }
 

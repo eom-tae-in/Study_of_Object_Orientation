@@ -2,49 +2,56 @@ package src.study.chapter4.law_court;
 
 import src.study.chapter4.law_court.exception.NotFoundJudgeException;
 import src.study.chapter4.law_court.exception.NotFoundRabbitException;
+import src.study.chapter4.law_court.judge.King;
+import src.study.chapter4.law_court.judge.Queen;
+import src.study.chapter4.law_court.manager.WhiteRabbit;
+import src.study.chapter4.law_court.witness.Alice;
+import src.study.chapter4.law_court.witness.Chef;
+import src.study.chapter4.law_court.witness.HatSeller;
+
 import java.util.Arrays;
 import java.util.List;
 
-enum Members {
+public enum Members {
 
     KING(Role.JUDGE) {
         @Override
-        Judge getJudge() {
+        public Judge getJudge() {
             return King.getJudgeInstance();
         }
     },
     QUEEN(Role.JUDGE, Role.WITNESS) {
         @Override
-        Judge getJudge() {
+        public Judge getJudge() {
             return Queen.getJudgeInstance();
         }
 
         @Override
-        Witness getWitness() {
+        public Witness getWitness() {
             return Queen.getWitnessInstance();
         }
     },
     WHITE_RABBIT(Role.RABBIT) {
         @Override
-        Rabbit getRabbit() {
+        public Manager getRabbit() {
             return WhiteRabbit.getRabbitInstance();
         }
     },
     ALICE(Role.WITNESS) {
         @Override
-        Witness getWitness() {
+        public Witness getWitness() {
             return Alice.getWitnessInstance();
         }
     },
     CHEF(Role.WITNESS) {
         @Override
-        Witness getWitness() {
+        public Witness getWitness() {
             return Chef.getWitnessInstance();
         }
     },
     HAT_SELLER(Role.WITNESS) {
         @Override
-        Witness getWitness() {
+        public Witness getWitness() {
             return HatSeller.getWitnessInstance();
         }
     };
@@ -55,7 +62,7 @@ enum Members {
         this.role = role;
     }
 
-    static List<Witness> getWitnesses() {
+    public static List<Witness> getWitnesses() {
         return Arrays.stream(values()).filter(member -> Arrays.asList(member.role).contains(Role.WITNESS))
                 .map(Members::getWitness).toList();
     }
@@ -66,21 +73,21 @@ enum Members {
                 .findAny().orElseThrow(NotFoundJudgeException::new);
     }
 
-    static Rabbit checkRabbitMember(String checkingMember) {
+    static Manager checkRabbitMember(String checkingMember) {
         return Arrays.stream(values()).filter(member -> member.toString().equals(checkingMember))
                 .filter(member -> Arrays.asList(member.role).contains(Role.RABBIT)).map(Members::getRabbit)
                 .findAny().orElseThrow(NotFoundRabbitException::new);
     }
 
-    Judge getJudge() {
+    public Judge getJudge() {
         return null;
     }
 
-    Rabbit getRabbit() {
+    public Manager getRabbit() {
         return null;
     }
 
-    Witness getWitness() {
+    public Witness getWitness() {
         return null;
     }
 }

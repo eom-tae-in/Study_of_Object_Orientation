@@ -1,13 +1,16 @@
-package src.study.chapter4.law_court;
+package src.study.chapter4.law_court.witness;
 
-class HatSeller implements Witness {
+import src.study.chapter4.law_court.Members;
+import src.study.chapter4.law_court.Witness;
+
+public class HatSeller implements Witness {
 
     private static final Witness witnessInstance = new HatSeller();
 
     private HatSeller() {
     }
 
-    static Witness getWitnessInstance() {
+    public static Witness getWitnessInstance() {
         return witnessInstance;
     }
 

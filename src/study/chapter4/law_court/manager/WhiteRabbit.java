@@ -1,19 +1,22 @@
-package src.study.chapter4.law_court;
+package src.study.chapter4.law_court.manager;
 
+import src.study.chapter4.law_court.Members;
+import src.study.chapter4.law_court.Manager;
+import src.study.chapter4.law_court.Witness;
 import src.study.chapter4.law_court.exception.NotFoundWitnessException;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class WhiteRabbit implements Rabbit {
+public class WhiteRabbit implements Manager {
 
-    private static final Rabbit rabbitInstance = new WhiteRabbit();
+    private static final Manager MANAGER_INSTANCE = new WhiteRabbit();
     Queue<Witness> witnesses = new LinkedList<>();
 
     private WhiteRabbit() {
     }
 
-    static Rabbit getRabbitInstance() {
-        return rabbitInstance;
+    public static Manager getRabbitInstance() {
+        return MANAGER_INSTANCE;
     }
 
     @Override

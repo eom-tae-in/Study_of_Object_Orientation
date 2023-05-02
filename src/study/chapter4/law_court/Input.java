@@ -17,7 +17,7 @@ class Input {
         }
     }
 
-    Rabbit rabbit() {
+    Manager rabbit() {
         try {
             String member = sc.next();
             return Members.checkRabbitMember(member);
